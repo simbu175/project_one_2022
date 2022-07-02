@@ -1,0 +1,58 @@
+{% extends 'dashboard/dashboard_base.html' %}
+
+{% block header %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="text">Dashboard Sidebar</div>
+
+        <div class="container">
+
+
+            <br>
+            <br>
+            <div>
+                <center>
+                    <h3 class="h3title"> Connection Status</h3>
+                </center>
+            </div>
+
+            <br>
+            <br>
+            {% if status %}
+                <center>
+                    <div class="wrapper-success">
+                        <div class="card">
+                       
+                        <div class="subject">
+                            <h3>Success</h3>
+                            <p>Connection has been succesfull</p>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </center>
+            {% else %}
+                <center>
+                    <div class="wrapper-warning">
+                        <div class="card">
+                        
+                        <div class="subject">
+                            <h5><b>Connection failed</b></h5>
+                            <p>We are not able to establish connection with the given configuration. Please try again!</p>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </center>
+            {% endif %}
+            
+            </div>
+              
+
+
+{% endblock %}
